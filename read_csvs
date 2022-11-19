@@ -1,0 +1,12 @@
+import os
+import pandas as pd
+
+os.chdir("C:\\Users\\Suraj Shourie\\Downloads\\DVA-Project\\TwitterData")  # change to your location
+files = os.listdir()
+
+dfs = []
+for f in files:
+    hashtag = f.split('.')[0]
+    dfs.append(pd.read_csv(f))
+
+df = pd.concat(dfs)
